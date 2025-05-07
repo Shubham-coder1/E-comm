@@ -4,13 +4,13 @@
   <parameter name="browser" value="chrome"/>
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="testCases.TC001_Registeraccount">
+      <class name="testCases.TC002_Loginaccount">
         <methods>
+          <include name="Loginaccount" invocation-numbers="2"/>
           <include name="teardown"/>
           <include name="setup"/>
-          <include name="Register"/>
         </methods>
-      </class> <!-- testCases.TC001_Registeraccount -->
+      </class> <!-- testCases.TC002_Loginaccount -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->
