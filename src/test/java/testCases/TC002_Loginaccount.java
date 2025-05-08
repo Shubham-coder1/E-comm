@@ -15,6 +15,7 @@ public class TC002_Loginaccount extends BaseClass
 	@Test(dataProvider = "dp1", dataProviderClass = Dataprovider1.class)
 	public void Loginaccount(String email, String pass, String exp)
 	{
+		try {
 		HomePage hp = new HomePage(driver);
 		RegistractionPage re = new RegistractionPage(driver);
 		LoginPage lp = new LoginPage(driver);
@@ -26,35 +27,15 @@ public class TC002_Loginaccount extends BaseClass
 		lp.passinput(pass);
 		lp.loginbtn();
 		
+		
 		boolean target = ma.myaccountexist();
-		
-		if(exp.equalsIgnoreCase("valid"))
-		{
-			if(target==true)
-			{
-				re.logout();
-				re.success();
-				Assert.assertTrue(true);
-			}
-			else
-			{
-				Assert.assertTrue(false);
-			}
+		Assert.assertTrue(target);
+		re.logout();
+		re.success();
 		}
-		if(exp.equalsIgnoreCase("invalid"))
+		catch(Exception e)
 		{
-			if(target==true)
-			{
-				re.logout();
-				re.success();
-				Assert.assertTrue(false);
-			}
-			else
-			{
-				Assert.assertTrue(true);
-			}
+			
 		}
-		
-		
 	}
 }

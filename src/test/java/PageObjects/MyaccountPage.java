@@ -11,14 +11,17 @@ public class MyaccountPage extends BasePage
 		super(driver);
 	}
 	
-	@FindBy(xpath="//h2[normalize-space()='My Account']")
+	@FindBy(xpath="//h2[text()='My Account']")
 	private WebElement dis_myacc;
 	
 	public boolean myaccountexist()
 	{
-		if(dis_myacc.isDisplayed())
-		return true;
-		else
+		try {
+			return (dis_myacc.isDisplayed());
+		}
+		catch(Exception e)
+		{
 			return false;
+		}
 	}
 }
