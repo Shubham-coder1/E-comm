@@ -1,6 +1,9 @@
 package testCases;
 
 import org.testng.Assert;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Listeners;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import PageObjects.HomePage;
@@ -12,6 +15,7 @@ import utilities.Dataprovider1;
 
 public class TC002_Loginaccount extends BaseClass
 {
+	
 	@Test(dataProvider = "dp1", dataProviderClass = Dataprovider1.class)
 	public void Loginaccount(String email, String pass, String exp)
 	{
@@ -35,7 +39,7 @@ public class TC002_Loginaccount extends BaseClass
 		}
 		catch(Exception e)
 		{
-			
+			e.printStackTrace();
 		}
 	}
 }
