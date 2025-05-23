@@ -17,7 +17,7 @@ public class TC002_Loginaccount extends BaseClass
 {
 	
 	@Test(dataProvider = "dp1", dataProviderClass = Dataprovider1.class)
-	public void Loginaccount(String email, String pass, String exp)
+	public void Loginaccount(String email, String pass)
 	{
 		try {
 		HomePage hp = new HomePage(driver);
